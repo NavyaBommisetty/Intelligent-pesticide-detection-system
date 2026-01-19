@@ -1,12 +1,3 @@
-# ============================================
-# 🌿 Intelligent Pest Infection & Stress Analysis System
-# ============================================
-# Author: Navya Bommisetty
-# Description:
-# This Python script uses OpenCV to detect pest infection on crop leaves
-# and performs thermal stress analysis to determine plant health.
-# Based on infection percentage, it suggests the required spray pressure.
-# The system simulates intelligent pesticide spraying logic using image processing.
 
 # --- Import Required Libraries ---
 import cv2
@@ -16,8 +7,6 @@ from google.colab import files
 
 # Upload Image from Local System (Colab Environment) 
 uploaded = files.upload()
-
-# 🔍 Function: analyze_stress()
 
 # This function generates a thermal image from the grayscale leaf image
 # and estimates the stress level based on brightness (pixel intensity).
@@ -41,13 +30,7 @@ def analyze_stress(image, infection_status):
         stress_status = "High Stress → Confirmed pest infection"
     return thermal, stress_status
 
-# 🧪 Processing Each Uploaded Image
-# The code below performs:
-# - HSV color thresholding to detect infected spots
-# - Contour detection to count infected areas
-# - Infection percentage calculation
-# - Spray level decision (Low / Medium / High)
-# - Thermal stress visualization
+# Processing Each Uploaded Image
 for filename in uploaded.keys():
     print(f"\nProcessing {filename} ...")
 
